@@ -12,7 +12,7 @@ name: Build/Push
 on:
   push:
     branches: 
-      - master
+      - gh_action_testing
 
 jobs:
   nightly-build-push:
