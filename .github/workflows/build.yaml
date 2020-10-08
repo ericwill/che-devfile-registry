@@ -30,7 +30,5 @@ jobs:
         run: |
           SHORT_SHA1=$(git rev-parse --short HEAD)
           docker build -t che-devfile-registry -f ./build/dockerfiles/Dockerfile --target registry .
-          docker tag che-devfile-registry quay.io/eclipse/che-devfile-registry:nightly
-          docker push quay.io/eclipse/che-devfile-registry:nightly
           docker tag che-devfile-registry quay.io/eclipse/che-devfile-registry:${SHORT_SHA1}
           docker push quay.io/eclipse/che-devfile-registry:${SHORT_SHA1}
