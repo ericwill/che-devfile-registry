@@ -28,7 +28,3 @@ jobs:
 
       - name: Build and push base images
         run: /bin/bash arbitrary-users-patch/build_images.sh --push
-        env:
-          DEFAULT_REGISTRY: quay.io
-          DEFAULT_ORGANIZATION: eclipse
-          DEFAULT_TAG: nightly
