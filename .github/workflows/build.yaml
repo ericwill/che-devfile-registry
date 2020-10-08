@@ -26,5 +26,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Build and push base images
-        run: /bin/bash arbitrary-users-patch/happy-path/build_happy_path_image.sh --push
+      - name: Build and push devfile image
+        run: |
+          SHORT_SHA1=$(git rev-parse --short HEAD)
+          docker build -t che-devfile-registry -f ./build/dockerfiles/Dockerfile --target registry .
+          docker tag che-devfile-registry quay.io/eclipse/che-devfile-registry:nightly
+          docker push quay.io/eclipse/che-devfile-registry:nightly
+          docker tag che-devfile-registry quay.io/eclipse/che-devfile-registry:${SHORT_SHA1}
+          docker push quay.io/eclipse/che-devfile-registry:${SHORT_SHA1}
