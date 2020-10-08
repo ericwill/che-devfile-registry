@@ -27,4 +27,4 @@ jobs:
           fetch-depth: 1
 
       - name: Build and push base images
-        run: /bin/bash /arbitrary-users-patch/happy-path/build_happy_path_image.sh --push
+        run: /bin/bash arbitrary-users-patch/happy-path/build_happy_path_image.sh --push
