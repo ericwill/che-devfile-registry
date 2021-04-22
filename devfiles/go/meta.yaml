@@ -1,6 +1,0 @@
----
-displayName: Go
-description: Stack with Go 1.12.10
-tags: ["Debian", "Go"]
-icon: /images/go.svg
-globalMemoryLimit: 1686Mi
